@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BM Stroy Service - Сервисное обслуживание инструментов</title>
+    <title>BM Stroy Service - Сервисное обслуживание электроинструмента</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -15,42 +15,32 @@
                 <span>BM STROY</span>
             </div>
             <ul class="nav-links">
-                <li><a href="#hero" class="nav-link">Главная</a></li>
                 <li><a href="#services" class="nav-link">Услуги</a></li>
                 <li><a href="#benefits" class="nav-link">Почему мы</a></li>
+                <li><a href="#team" class="nav-link">Команда</a></li>
                 <li><a href="#contact" class="nav-link">Контакты</a></li>
             </ul>
             <button class="mobile-menu-btn">☰</button>
         </div>
     </nav>
 
-    <!-- Герой секция -->
-    <section id="hero" class="hero">
-        <div class="hero-background">
-            <div class="gradient-orb gradient-orb-1"></div>
-            <div class="gradient-orb gradient-orb-2"></div>
+    <!-- Герой секция с фото -->
+    <section class="hero">
+        <div class="hero-image">
+            <img src="hero-worker.jpg" alt="Профессиональный мастер" class="hero-img">
+            <div class="hero-overlay"></div>
         </div>
-        
         <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">
-                    <span class="word">Корпоративное</span>
-                    <span class="word">обслуживание</span>
-                    <span class="word highlight">электроинструмента</span>
-                </h1>
-                <p class="hero-subtitle">Надёжность вашего инструмента — безопасность вашего бизнеса</p>
-                <p class="hero-description">
-                    Мы обеспечиваем комплексное сервисное обслуживание электроинструмента для строительных и производственных компаний.
-                </p>
-                <button class="btn btn-primary">Получить консультацию</button>
-            </div>
-            <div class="hero-visual">
-                <div class="tool-showcase">
-                    <div class="tool-card">🔧</div>
-                    <div class="tool-card">🛠️</div>
-                    <div class="tool-card">⚙️</div>
-                </div>
-            </div>
+            <h1 class="hero-title">
+                <span class="word">Корпоративное</span>
+                <span class="word">обслуживание</span>
+                <span class="word highlight">электроинструмента</span>
+            </h1>
+            <p class="hero-subtitle">Надёжность вашего инструмента — безопасность вашего бизнеса</p>
+            <p class="hero-description">
+                Мы обеспечиваем комплексное сервисное обслуживание электроинструмента для строительных и производственных компаний. Работая с нами, вы сокращаете простой, увеличиваете срок службы оборудования и контролируете расходы.
+            </p>
+            <button class="btn btn-primary">Получить консультацию</button>
         </div>
     </section>
 
@@ -62,7 +52,7 @@
         </div>
     </section>
 
-    <!-- Услуги -->
+    <!-- Услуги с фото инструментов -->
     <section id="services" class="services">
         <div class="services-container">
             <h2 class="section-title">Наши услуги</h2>
@@ -91,6 +81,17 @@
                     <p>Полная отчётность по всем работам и состоянию инструмента</p>
                     <div class="card-accent"></div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Фото инструментов -->
+    <section class="tools-showcase">
+        <img src="tools-collection.jpg" alt="Коллекция инструментов" class="showcase-img">
+        <div class="showcase-overlay">
+            <div class="showcase-text">
+                <h3>Профессиональные инструменты</h3>
+                <p>Мы работаем с лучшими брендами и оборудованием</p>
             </div>
         </div>
     </section>
@@ -162,6 +163,48 @@
                     <h3>Отчёты</h3>
                     <p>Полная документация всех работ и состояния инструмента</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Фото мастерской -->
+    <section class="workshop-showcase">
+        <img src="workshop.jpg" alt="Профессиональная мастерская" class="workshop-img">
+        <div class="workshop-overlay">
+            <div class="workshop-text">
+                <h3>Современная мастерская</h3>
+                <p>Оборудованная всем необходимым для качественного обслуживания</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Команда -->
+    <section id="team" class="team">
+        <div class="team-container">
+            <h2 class="section-title">Наша команда</h2>
+            <div class="team-image">
+                <img src="team-workers.jpg" alt="Профессиональная команда" class="team-img">
+            </div>
+            <div class="team-info">
+                <h3>Опытные специалисты</h3>
+                <p>Наша команда состоит из высококвалифицированных мастеров с многолетним опытом в сервисном обслуживании электроинструмента. Каждый член команды прошёл специальное обучение и сертификацию.</p>
+                <ul class="team-features">
+                    <li>✓ Более 15 лет опыта в отрасли</li>
+                    <li>✓ Сертифицированные специалисты</li>
+                    <li>✓ Постоянное повышение квалификации</li>
+                    <li>✓ Гарантия на все виды работ</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Фото обслуживания -->
+    <section class="maintenance-showcase">
+        <img src="maintenance.jpg" alt="Техническое обслуживание" class="maintenance-img">
+        <div class="maintenance-overlay">
+            <div class="maintenance-text">
+                <h3>Профессиональное обслуживание</h3>
+                <p>Внимательное отношение к каждому инструменту</p>
             </div>
         </div>
     </section>

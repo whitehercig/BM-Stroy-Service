@@ -35,7 +35,8 @@ body {
 .process-container,
 .stats-container,
 .contact-container,
-.footer-content {
+.footer-content,
+.team-container {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 30px;
@@ -165,56 +166,36 @@ body {
     overflow: hidden;
 }
 
-.hero-background {
+.hero-image {
     position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
     top: 0;
     left: 0;
-    z-index: 0;
-}
-
-.gradient-orb {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.3;
-}
-
-.gradient-orb-1 {
-    width: 400px;
-    height: 400px;
-    background: linear-gradient(135deg, var(--primary), #ff9d1a);
-    top: -100px;
-    right: -100px;
-    animation: float 6s ease-in-out infinite;
-}
-
-.gradient-orb-2 {
-    width: 300px;
-    height: 300px;
-    background: linear-gradient(135deg, #ff9d1a, var(--primary));
-    bottom: -50px;
-    left: -50px;
-    animation: float 8s ease-in-out infinite reverse;
-}
-
-@keyframes float {
-    0%, 100% { transform: translate(0, 0); }
-    50% { transform: translate(30px, 30px); }
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(15, 15, 15, 0.9), rgba(15, 15, 15, 0.3));
+    z-index: 2;
 }
 
 .hero-content {
     position: relative;
-    z-index: 1;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
+    z-index: 3;
+    width: 50%;
     padding: 60px 0;
-}
-
-.hero-text {
     animation: slideInLeft 0.8s ease;
 }
 
@@ -275,57 +256,6 @@ body {
     margin-bottom: 30px;
     line-height: 1.8;
     color: #ccc;
-}
-
-.hero-visual {
-    animation: slideInRight 0.8s ease;
-}
-
-@keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.tool-showcase {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.tool-card {
-    width: 120px;
-    height: 120px;
-    background: rgba(255, 140, 0, 0.1);
-    border: 2px solid var(--primary);
-    border-radius: var(--border-radius);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 50px;
-    transition: all 0.3s ease;
-    animation: bounce 2s ease-in-out infinite;
-}
-
-.tool-card:nth-child(1) { animation-delay: 0s; }
-.tool-card:nth-child(2) { animation-delay: 0.2s; }
-.tool-card:nth-child(3) { animation-delay: 0.4s; }
-
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-}
-
-.tool-card:hover {
-    background: rgba(255, 140, 0, 0.2);
-    transform: scale(1.1);
-    box-shadow: 0 15px 40px rgba(255, 140, 0, 0.3);
 }
 
 /* Ключевая фраза */
@@ -474,6 +404,47 @@ body {
     width: 100%;
 }
 
+/* Фото инструментов */
+.tools-showcase {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+}
+
+.showcase-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.showcase-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(15, 15, 15, 0.7), rgba(255, 140, 0, 0.3));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.showcase-text {
+    text-align: center;
+    color: white;
+    animation: fadeIn 0.8s ease;
+}
+
+.showcase-text h3 {
+    font-size: 42px;
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.showcase-text p {
+    font-size: 18px;
+}
+
 /* Преимущества */
 .benefits {
     padding: 100px 30px;
@@ -604,6 +575,141 @@ body {
     margin: 0 10px;
 }
 
+/* Фото мастерской */
+.workshop-showcase {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+}
+
+.workshop-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.workshop-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 140, 0, 0.3), rgba(15, 15, 15, 0.7));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.workshop-text {
+    text-align: center;
+    color: white;
+    animation: fadeIn 0.8s ease;
+}
+
+.workshop-text h3 {
+    font-size: 42px;
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.workshop-text p {
+    font-size: 18px;
+}
+
+/* Команда */
+.team {
+    padding: 100px 30px;
+    background: linear-gradient(135deg, var(--light) 0%, #fff 100%);
+}
+
+.team-image {
+    margin-bottom: 50px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.team-img {
+    width: 100%;;
+    height: auto;
+    display: block;
+}
+
+.team-info {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.team-info h3 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: var(--dark);
+}
+
+.team-info p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 25px;
+}
+
+.team-features {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.team-features li {
+    font-size: 16px;
+    color: var(--text);
+    padding: 12px;
+    background: white;
+    border-left: 4px solid var(--primary);
+    border-radius: 4px;
+}
+
+/* Фото обслуживания */
+.maintenance-showcase {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+}
+
+.maintenance-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.maintenance-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(15, 15, 15, 0.7), rgba(255, 140, 0, 0.3));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.maintenance-text {
+    text-align: center;
+    color: white;
+    animation: fadeIn 0.8s ease;
+}
+
+.maintenance-text h3 {
+    font-size: 42px;
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.maintenance-text p {
+    font-size: 18px;
+}
+
 /* Статистика */
 .stats {
     padding: 80px 30px;
@@ -716,9 +822,19 @@ body {
 
 /* Адаптивность */
 @media (max-width: 1024px) {
+    .hero {
+        flex-direction: column;
+    }
+
+    .hero-image {
+        position: static;
+        width: 100%;
+        height: 300px;
+    }
+
     .hero-content {
-        grid-template-columns: 1fr;
-        gap: 40px;
+        width: 100%;
+        padding: 40px 0;
     }
 
     .hero-title {
@@ -789,6 +905,18 @@ body {
     .stat-number {
         font-size: 36px;
     }
+
+    .showcase-img,
+    .workshop-img,
+    .maintenance-img {
+        height: 300px;
+    }
+
+    .showcase-text h3,
+    .workshop-text h3,
+    .maintenance-text h3 {
+        font-size: 28px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -840,6 +968,22 @@ body {
     .contact-item {
         padding: 25px;
     }
+
+    .showcase-img,
+    .workshop-img,
+    .maintenance-img {
+        height: 200px;
+    }
+
+    .showcase-text h3,
+    .workshop-text h3,
+    .maintenance-text h3 {
+        font-size: 20px;
+    }
+
+    .team-info h3 {
+        font-size: 24px;
+    }
 }
 
 /* Анимации при загрузке */
@@ -855,4 +999,3 @@ body {
 body {
     animation: fadeIn 0.5s ease;
 }
-
