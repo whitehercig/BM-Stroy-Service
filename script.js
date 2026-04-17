@@ -1,3 +1,33 @@
+// Мобильное меню
+const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+const navLinks = document.querySelector('.nav-links');
+
+if (mobileMenuBtn && navLinks) {
+    mobileMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navLinks.classList.toggle('active');
+        mobileMenuBtn.classList.toggle('active');
+    });
+
+    // Закрытие меню при клике на ссылку
+    const navItems = document.querySelectorAll('.nav-link');
+    navItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navLinks.classList.remove('active');
+            mobileMenuBtn.classList.remove('active');
+        });
+    });
+
+    // Закрытие меню при клике вне его
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.navbar')) {
+            navLinks.classList.remove('active');
+            mobileMenuBtn.classList.remove('active');
+        }
+    });
+}
+
 // Плавная прокрутка
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -90,15 +120,6 @@ document.querySelectorAll('.stats-container').forEach(el => {
     statsObserver.observe(el);
 });
 
-// Параллакс эффект для фона
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const orbs = document.querySelectorAll('.gradient-orb');
-    orbs.forEach((orb, index) => {
-        orb.style.transform = `translate(${scrolled * 0.5 * (index + 1)}px, ${scrolled * 0.3 * (index + 1)}px)`;
-    });
-});
-
 // Кнопки CTA
 document.querySelectorAll('.btn-primary').forEach(button => {
     button.addEventListener('click', function() {
@@ -108,22 +129,6 @@ document.querySelectorAll('.btn-primary').forEach(button => {
         }
     });
 });
-
-// Мобильное меню
-const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-const navLinks = document.querySelector('.nav-links');
-
-if (mobileMenuBtn) {
-    mobileMenuBtn.addEventListener('click', () => {
-        navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-    });
-
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.style.display = 'none';
-        });
-    });
-}
 
 // Добавляем стили для анимации
 const style = document.createElement('style');
@@ -162,6 +167,12 @@ style.textContent = `
             background: var(--dark-light);
             padding: 20px;
             gap: 15px;
+            z-index: 999;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-links.active {
+            display: flex !important;
         }
     }
 `;
